@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eeefec" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="An interactive CT atlas of the domestic cat. Twelve scanned regions as 3D bone surfaces and as the slices they were built from."
+    />
+    <title>Catigraphy | CT anatomy of the domestic cat</title>
+    <link rel="canonical" href="https://catigraphy.xera.ac/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="author" content="Ahmad Sofi-Mahmudi" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Link previews. The card in /og.png is a rendered title card, not a
+         screenshot: the atlas draws itself with WebGL, which no link scraper
+         runs, so a scraped frame would be an empty stage. Absolute URLs are
+         required here; a scraper does not resolve relative ones. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Catigraphy" />
+    <meta property="og:url" content="https://catigraphy.xera.ac/" />
+    <meta property="og:title" content="Catigraphy | CT anatomy of the domestic cat" />
+    <meta
+      property="og:description"
+      content="An interactive CT atlas of the domestic cat. Twelve scanned regions as 3D bone surfaces and as the slices they were built from."
+    />
+    <meta property="og:image" content="https://catigraphy.xera.ac/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Catigraphy, an interactive CT atlas of the domestic cat, beside the rebuilt skull surface"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Catigraphy | CT anatomy of the domestic cat" />
+    <meta
+      name="twitter:description"
+      content="An interactive CT atlas of the domestic cat. Twelve scanned regions as 3D bone surfaces and as the slices they were built from."
+    />
+    <meta name="twitter:image" content="https://catigraphy.xera.ac/og.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://catigraphy.xera.ac/#website",
+            "name": "Catigraphy",
+            "url": "https://catigraphy.xera.ac/",
+            "description": "An interactive CT atlas of the domestic cat.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://catigraphy.xera.ac/#author" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://catigraphy.xera.ac/#author",
+            "name": "Ahmad Sofi-Mahmudi",
+            "url": "https://github.com/choxos"
+          },
+          {
+            "@type": "LearningResource",
+            "@id": "https://catigraphy.xera.ac/#atlas",
+            "name": "Catigraphy: a CT atlas of the domestic cat",
+            "description": "Twelve CT series of one domestic cat, rebuilt as 3D bone surfaces and served with the slice volumes they came from.",
+            "url": "https://catigraphy.xera.ac/",
+            "image": "https://catigraphy.xera.ac/og.png",
+            "license": "https://catigraphy.xera.ac/ATTRIBUTION.md",
+            "inLanguage": "en",
+            "isAccessibleForFree": true,
+            "learningResourceType": "Interactive atlas",
+            "educationalLevel": "Veterinary and comparative anatomy teaching",
+            "about": [
+              { "@type": "Thing", "name": "Feline anatomy" },
+              { "@type": "Thing", "name": "Comparative vertebrate anatomy" },
+              { "@type": "Thing", "name": "Computed tomography" },
+              { "@type": "Thing", "name": "Skeletal anatomy" }
+            ],
+            "author": { "@id": "https://catigraphy.xera.ac/#author" },
+            "isPartOf": { "@id": "https://catigraphy.xera.ac/#website" }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      // Resolve the theme before the first paint so a dark mode reader never
+      // sees a white flash. The stored choice wins; otherwise follow the system.
+      (() => {
+        let theme;
+        try {
+          theme = localStorage.getItem("catigraphy-theme");
+        } catch {}
+        if (theme !== "dark" && theme !== "light")
+          theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <!-- The interface is written into #app before the WebGL context is asked
+         for, so a crawler that runs scripts gets all of it. This block is for
+         the ones that do not run scripts at all. -->
+    <noscript>
+      <h1>Catigraphy</h1>
+      <p>
+        An interactive CT atlas of the domestic cat, built from twelve computed
+        tomography series of one specimen published on MorphoSource by 3D
+        Anatomy Studios. It needs JavaScript and a browser with WebGL.
+      </p>
+      <p>Inside it:</p>
+      <ul>
+        <li>
+          Twelve scanned regions as 3D bone surfaces you can rotate, fade and
+          cut with a section plane: the skull with its mandible and atlas, each
+          part of the vertebral column, the pelvis, both limbs, and the two
+          halves of the whole body.
+        </li>
+        <li>
+          The slices themselves, in three planes, with bone and soft tissue
+          windows. The soft tissue is on the slices and nowhere else.
+        </li>
+        <li>
+          Fifteen named landmarks on the skull, and a written note on what to
+          look for in every region.
+        </li>
+        <li>
+          A reference section on the cat skeleton: the vertebral and dental
+          formulae, the skull, the vertebral column and the limbs.
+        </li>
+      </ul>
+      <p>
+        The specimen was scanned disarticulated, in twelve independent frames of
+        reference, so the atlas is regional and shows no assembled skeleton. The
+        bones within a region are not separated from one another.
+      </p>
+      <p>
+        Source code and the scans it is built from:
+        <a href="https://github.com/choxos/catigraphy">github.com/choxos/catigraphy</a>.
+      </p>
+    </noscript>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

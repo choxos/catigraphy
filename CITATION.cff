@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "Catigraphy: an interactive CT atlas of the domestic cat"
+message: "If you use this software or its teaching material, please cite it as below, and cite the source scans as recorded in public/ATTRIBUTION.md."
+type: software
+authors:
+  - family-names: Sofi-Mahmudi
+    given-names: Ahmad
+    email: ahmad.pub@gmail.com
+    alias: choxos
+repository-code: "https://github.com/choxos/catigraphy"
+abstract: >-
+  An interactive browser atlas of domestic cat anatomy built from twelve
+  computed tomography series of one specimen published on MorphoSource by
+  3D Anatomy Studios. Each series is rebuilt as a bone surface by marching
+  cubes on the thresholded volume and is served together with the volume
+  itself, which the browser reslices in three planes with selectable
+  windows. The skull carries fifteen named landmarks placed against the
+  midsagittal slice; every region carries a written note. The specimen was
+  scanned disarticulated in twelve independent frames of reference, so the
+  atlas is regional and shows no assembled skeleton, and the bones within a
+  region are not segmented from one another. It is an educational reference
+  and is not intended for diagnosis.
+keywords:
+  - feline anatomy
+  - veterinary anatomy
+  - comparative anatomy
+  - computed tomography
+  - 3D visualization
+  - open educational resources
+license: MIT

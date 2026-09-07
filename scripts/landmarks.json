@@ -1,0 +1,155 @@
+{
+ "_comment": "Landmark positions in each region's own raw scan millimeters, on the axes the extractor writes: 0 steps through the acquired slices, 1 through the rows, 2 through the columns. scripts/pack-atlas.mjs applies the same orientation and centering it applies to the surface, and snaps each point onto the nearest vertex of the decimated mesh, so a coordinate read off an orthographic preview lands on the surface rather than inside it. Only the head is landmarked. Every point in it was placed against the midsagittal slice and checked on two orthographic views of the surface, and the teeth were located from the enamel density rather than by eye. The other eleven regions are scans of a disarticulated specimen whose pose in the scanner cannot be recovered from the headers; placing named points on them would be guessing, so they carry written notes instead. The lateral points sit on the side of the specimen that faces the camera in the atlas's default view; the structures they name are paired and the opposite side is the same.",
+ "head": [
+  {
+   "short": "Nasal aperture",
+   "name": "Bony nasal aperture",
+   "position": [
+    12,
+    33,
+    39.5
+   ],
+   "note": "The opening of the nasal cavity, bounded by the incisive and nasal bones. The turbinates behind it are visible on the transverse slices and not on this surface."
+  },
+  {
+   "short": "Canine",
+   "name": "Upper canine tooth",
+   "position": [
+    19.5,
+    23,
+    50.0
+   ],
+   "note": "The longest tooth in the cat. Its root is longer than its crown and runs up into the maxilla behind the incisors."
+  },
+  {
+   "short": "Infraorbital foramen",
+   "name": "Infraorbital foramen",
+   "position": [
+    30,
+    33,
+    57.0
+   ],
+   "note": "The opening on the side of the maxilla in front of the orbit, carrying the infraorbital nerve and vessels to the muzzle and the whiskers."
+  },
+  {
+   "short": "Postorbital process",
+   "name": "Postorbital process of the frontal bone",
+   "position": [
+    47,
+    56,
+    57
+   ],
+   "note": "The point on the frontal bone at the back of the orbital rim. It reaches toward the matching process on the zygomatic and stops: the cat's orbit is open behind, closed in life by the orbital ligament rather than by bone, so the orbit and the temporal fossa run into one another."
+  },
+  {
+   "short": "Carnassials",
+   "name": "Carnassial teeth",
+   "position": [
+    36,
+    21,
+    52.0
+   ],
+   "note": "The upper fourth premolar shears past the lower first molar. They are the blades of the dentition and sit where the jaw closes hardest."
+  },
+  {
+   "short": "Zygomatic arch",
+   "name": "Zygomatic arch",
+   "position": [
+    63.8,
+    43.0,
+    69.5
+   ],
+   "note": "The bar of zygomatic and temporal bone that bridges the orbit to the braincase. The masseter runs from its lower edge to the mandible."
+  },
+  {
+   "short": "Temporal fossa",
+   "name": "Temporal fossa",
+   "position": [
+    68,
+    50,
+    57.0
+   ],
+   "note": "The hollow between the arch and the braincase, filled in life by the temporalis. The gap between the two is what gives the muscle room."
+  },
+  {
+   "short": "Sagittal crest",
+   "name": "Sagittal crest",
+   "position": [
+    75,
+    70,
+    39.5
+   ],
+   "note": "The ridge along the midline of the braincase where the temporalis of each side meets its opposite. It is low in the cat and rises toward the back of the skull."
+  },
+  {
+   "short": "Coronoid process",
+   "name": "Coronoid process of the mandible",
+   "position": [
+    73,
+    46,
+    61.0
+   ],
+   "note": "The blade at the back of the mandible that rises into the temporal fossa. The temporalis inserts on it, which is why the process is as tall as the fossa is deep."
+  },
+  {
+   "short": "Condylar process",
+   "name": "Condylar process of the mandible",
+   "position": [
+    76,
+    34,
+    63
+   ],
+   "note": "A transverse cylinder set in a tight socket on the temporal bone. It hinges and does almost nothing else: the cat's jaw joint allows no grinding."
+  },
+  {
+   "short": "Angular process",
+   "name": "Angular process",
+   "position": [
+    91.2,
+    28.0,
+    50.6
+   ],
+   "note": "The hook at the lower back corner of the mandible, where the digastric and part of the pterygoid attach."
+  },
+  {
+   "short": "Tympanic bulla",
+   "name": "Tympanic bulla",
+   "position": [
+    86,
+    30,
+    50
+   ],
+   "note": "The rounded chamber under the back of the skull that houses the middle ear. In cats it is large and divided inside by a bony septum, which the transverse slices show."
+  },
+  {
+   "short": "Occipital condyle",
+   "name": "Occipital condyle",
+   "position": [
+    100,
+    30,
+    46.0
+   ],
+   "note": "One of the pair that meets the atlas. Between them is the foramen magnum, and the joint they make carries the nodding of the head."
+  },
+  {
+   "short": "Symphysis",
+   "name": "Mandibular symphysis",
+   "position": [
+    13,
+    12,
+    39.5
+   ],
+   "note": "The joint between the two halves of the mandible. In the cat it stays fibrous rather than fusing, so the two halves can move slightly against one another."
+  },
+  {
+   "short": "Atlas wing",
+   "name": "Wing of the atlas",
+   "position": [
+    110.3,
+    20.1,
+    54.7
+   ],
+   "note": "The broad transverse process of the first cervical vertebra. The atlas has no body and no spinous process; these wings are what you feel behind the skull."
+  }
+ ]
+}

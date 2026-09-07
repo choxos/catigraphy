@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!-- The cat mark from the site's own icon set (src/main.js), on the brand
+       accent so the tab icon reads against a light or a dark browser chrome. -->
+  <rect width="24" height="24" rx="5" fill="#2a3a33"/>
+  <g fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+     transform="translate(12 12) scale(0.82) translate(-12 -12)">
+    <path d="M4 9 5 3l4 3h6l4-3 1 6v5a7 7 0 0 1-7 7h-2a7 7 0 0 1-7-7Z"/>
+    <path d="M9 12h.01M15 12h.01M12 15v1"/>
+  </g>
+</svg>

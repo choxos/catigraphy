@@ -1,0 +1,1202 @@
+{
+  "source": "MorphoSource",
+  "collection": "Scans of Carolina Biological Supply Specimens",
+  "specimen": {
+    "taxon": "Felis catus",
+    "specimenId": "3DAS:00001",
+    "organization": "3D Anatomy Studios",
+    "facility": "Keck XROMM Core Facility, Brown University",
+    "device": "Animage Fidex CT",
+    "modality": "Micro/nano X-ray computed tomography"
+  },
+  "scope": "Twelve independently acquired CT series of one disarticulated domestic cat. The series share no coordinate system, so each is its own region and no assembled skeleton is shown. Bones within a region are not separated from one another.",
+  "budget": 320000,
+  "regions": [
+    {
+      "id": "head",
+      "name": "Skull, mandible and atlas",
+      "group": "skull",
+      "series": "Head",
+      "media": "000362550",
+      "buffer": "/models/head.bin",
+      "bufferBytes": 6772232,
+      "positions": 0,
+      "normals": 1955220,
+      "indices": 2932832,
+      "vertexCount": 162935,
+      "indexCount": 959850,
+      "sourceTriangles": 1533534,
+      "triangles": 319950,
+      "simplifyError": 0.00039,
+      "level": 300,
+      "voxel": [
+        0.314106,
+        0.314106,
+        0.314106
+      ],
+      "sourceVoxel": [
+        0.157053,
+        0.157053,
+        0.157053
+      ],
+      "bounds": [
+        [
+          -67.249,
+          -34.842,
+          -32.608
+        ],
+        [
+          67.249,
+          34.842,
+          32.608
+        ]
+      ],
+      "size": [
+        134.5,
+        69.68,
+        65.22
+      ],
+      "orient": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "landmarks": [
+        {
+          "short": "Nasal aperture",
+          "name": "Bony nasal aperture",
+          "note": "The opening of the nasal cavity, bounded by the incisive and nasal bones. The turbinates behind it are visible on the transverse slices and not on this surface.",
+          "position": [
+            -59.63,
+            -1.02,
+            1.21
+          ],
+          "snappedBy": 0.1
+        },
+        {
+          "short": "Canine",
+          "name": "Upper canine tooth",
+          "note": "The longest tooth in the cat. Its root is longer than its crown and runs up into the maxilla behind the incisors.",
+          "position": [
+            -49.16,
+            -14.09,
+            14.37
+          ],
+          "snappedBy": 2.05
+        },
+        {
+          "short": "Infraorbital foramen",
+          "name": "Infraorbital foramen",
+          "note": "The opening on the side of the maxilla in front of the orbit, carrying the infraorbital nerve and vessels to the muzzle and the whiskers.",
+          "position": [
+            -41,
+            -3,
+            19.18
+          ],
+          "snappedBy": 0.79
+        },
+        {
+          "short": "Postorbital process",
+          "name": "Postorbital process of the frontal bone",
+          "note": "The point on the frontal bone at the back of the orbital rim. It reaches toward the matching process on the zygomatic and stops: the cat's orbit is open behind, closed in life by the orbital ligament rather than by bone, so the orbit and the temporal fossa run into one another.",
+          "position": [
+            -22.52,
+            22.95,
+            19.35
+          ],
+          "snappedBy": 3.95
+        },
+        {
+          "short": "Carnassials",
+          "name": "Carnassial teeth",
+          "note": "The upper fourth premolar shears past the lower first molar. They are the blades of the dentition and sit where the jaw closes hardest.",
+          "position": [
+            -33.6,
+            -14.39,
+            14.92
+          ],
+          "snappedBy": 0.41
+        },
+        {
+          "short": "Zygomatic arch",
+          "name": "Zygomatic arch",
+          "note": "The bar of zygomatic and temporal bone that bridges the orbit to the braincase. The masseter runs from its lower edge to the mandible.",
+          "position": [
+            -7.42,
+            8.29,
+            29.29
+          ],
+          "snappedBy": 0.91
+        },
+        {
+          "short": "Temporal fossa",
+          "name": "Temporal fossa",
+          "note": "The hollow between the arch and the braincase, filled in life by the temporalis. The gap between the two is what gives the muscle room.",
+          "position": [
+            -2.49,
+            15.62,
+            18.64
+          ],
+          "snappedBy": 2.29
+        },
+        {
+          "short": "Sagittal crest",
+          "name": "Sagittal crest",
+          "note": "The ridge along the midline of the braincase where the temporalis of each side meets its opposite. It is low in the cat and rises toward the back of the skull.",
+          "position": [
+            3.75,
+            35.87,
+            1.89
+          ],
+          "snappedBy": 0.81
+        },
+        {
+          "short": "Coronoid process",
+          "name": "Coronoid process of the mandible",
+          "note": "The blade at the back of the mandible that rises into the temporal fossa. The temporalis inserts on it, which is why the process is as tall as the fossa is deep.",
+          "position": [
+            2.83,
+            9.04,
+            24.3
+          ],
+          "snappedBy": 3.61
+        },
+        {
+          "short": "Condylar process",
+          "name": "Condylar process of the mandible",
+          "note": "A transverse cylinder set in a tight socket on the temporal bone. It hinges and does almost nothing else: the cat's jaw joint allows no grinding.",
+          "position": [
+            3.98,
+            -0.95,
+            24.64
+          ],
+          "snappedBy": 2.55
+        },
+        {
+          "short": "Angular process",
+          "name": "Angular process",
+          "note": "The hook at the lower back corner of the mandible, where the digastric and part of the pterygoid attach.",
+          "position": [
+            21.35,
+            -8.56,
+            12.66
+          ],
+          "snappedBy": 0.17
+        },
+        {
+          "short": "Tympanic bulla",
+          "name": "Tympanic bulla",
+          "note": "The rounded chamber under the back of the skull that houses the middle ear. In cats it is large and divided inside by a bony septum, which the transverse slices show.",
+          "position": [
+            16.37,
+            -6.77,
+            11.14
+          ],
+          "snappedBy": 3.77
+        },
+        {
+          "short": "Occipital condyle",
+          "name": "Occipital condyle",
+          "note": "One of the pair that meets the atlas. Between them is the foramen magnum, and the joint they make carries the nodding of the head.",
+          "position": [
+            28.59,
+            -5.6,
+            8.36
+          ],
+          "snappedBy": 0.72
+        },
+        {
+          "short": "Symphysis",
+          "name": "Mandibular symphysis",
+          "note": "The joint between the two halves of the mandible. In the cat it stays fibrous rather than fusing, so the two halves can move slightly against one another.",
+          "position": [
+            -58.03,
+            -24.29,
+            1.31
+          ],
+          "snappedBy": 0.8
+        },
+        {
+          "short": "Atlas wing",
+          "name": "Wing of the atlas",
+          "note": "The broad transverse process of the first cervical vertebra. The atlas has no body and no spinous process; these wings are what you feel behind the skull.",
+          "position": [
+            41.11,
+            -15.07,
+            17.43
+          ],
+          "snappedBy": 0.05
+        }
+      ],
+      "volume": {
+        "sheet": "/volumes/head-slices.jpg",
+        "dims": [
+          256,
+          256,
+          440
+        ],
+        "tiles": [
+          21,
+          21
+        ],
+        "window": [
+          -1000,
+          2000
+        ],
+        "voxel": [
+          0.314106,
+          0.314106,
+          0.314106
+        ],
+        "bytes": 3325813
+      }
+    },
+    {
+      "id": "cervical",
+      "name": "Cervical vertebrae",
+      "group": "axial",
+      "series": "Cervical vertebrae",
+      "media": "000362554",
+      "buffer": "/models/cervical.bin",
+      "bufferBytes": 6746316,
+      "positions": 0,
+      "normals": 1937544,
+      "indices": 2906316,
+      "vertexCount": 161462,
+      "indexCount": 960000,
+      "sourceTriangles": 525684,
+      "triangles": 320000,
+      "simplifyError": 0.00014,
+      "level": 300,
+      "voxel": [
+        0.314106,
+        0.314106,
+        0.314106
+      ],
+      "sourceVoxel": [
+        0.157053,
+        0.157053,
+        0.157053
+      ],
+      "bounds": [
+        [
+          -42.561,
+          -28.567,
+          -37.841
+        ],
+        [
+          42.561,
+          28.567,
+          37.841
+        ]
+      ],
+      "size": [
+        85.12,
+        57.13,
+        75.68
+      ],
+      "orient": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "landmarks": [],
+      "volume": {
+        "sheet": "/volumes/cervical-slices.jpg",
+        "dims": [
+          256,
+          256,
+          272
+        ],
+        "tiles": [
+          17,
+          16
+        ],
+        "window": [
+          -1000,
+          2000
+        ],
+        "voxel": [
+          0.314106,
+          0.314106,
+          0.314106
+        ],
+        "bytes": 1893852
+      }
+    },
+    {
+      "id": "thoracic",
+      "name": "Thoracic vertebrae and ribs",
+      "group": "axial",
+      "series": "Thoracic vertebrae",
+      "media": "000367176",
+      "buffer": "/models/thoracic.bin",
+      "bufferBytes": 6741204,
+      "positions": 0,
+      "normals": 1934160,
+      "indices": 2901240,
+      "vertexCount": 161180,
+      "indexCount": 959991,
+      "sourceTriangles": 726915,
+      "triangles": 319997,
+      "simplifyError": 0.00027,
+      "level": 250,
+      "voxel": [
+        0.314106,
+        0.314106,
+        0.314106
+      ],
+      "sourceVoxel": [
+        0.157053,
+        0.157053,
+        0.157053
+      ],
+      "bounds": [
+        [
+          -42.561,
+          -36.95,
+          -38.838
+        ],
+        [
+          42.561,
+          36.95,
+          38.838
+        ]
+      ],
+      "size": [
+        85.12,
+        73.9,
+        77.68
+      ],
+      "orient": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "landmarks": [],
+      "volume": {
+        "sheet": "/volumes/thoracic-slices.jpg",
+        "dims": [
+          256,
+          256,
+          272
+        ],
+        "tiles": [
+          17,
+          16
+        ],
+        "window": [
+          -1000,
+          2000
+        ],
+        "voxel": [
+          0.314106,
+          0.314106,
+          0.314106
+        ],
+        "bytes": 1942130
+      }
+    },
+    {
+      "id": "lumbar",
+      "name": "Lumbar vertebrae",
+      "group": "axial",
+      "series": "Lumbar vertebrae",
+      "media": "000368005",
+      "buffer": "/models/lumbar.bin",
+      "bufferBytes": 6735348,
+      "positions": 0,
+      "normals": 1930248,
+      "indices": 2895372,
+      "vertexCount": 160854,
+      "indexCount": 959994,
+      "sourceTriangles": 452526,
+      "triangles": 319998,
+      "simplifyError": 0.00008,
+      "level": 300,
+      "voxel": [
+        0.314106,
+        0.314106,
+        0.314106
+      ],
+      "sourceVoxel": [
+        0.157053,
+        0.157053,
+        0.157053
+      ],
+      "bounds": [
+        [
+          -42.561,
+          -19.691,
+          -23.952
+        ],
+        [
+          42.561,
+          19.691,
+          23.952
+        ]
+      ],
+      "size": [
+        85.12,
+        39.38,
+        47.9
+      ],
+      "orient": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "landmarks": [],
+      "volume": {
+        "sheet": "/volumes/lumbar-slices.jpg",
+        "dims": [
+          256,
+          256,
+          272
+        ],
+        "tiles": [
+          17,
+          16
+        ],
+        "window": [
+          -1000,
+          2000
+        ],
+        "voxel": [
+          0.314106,
+          0.314106,
+          0.314106
+        ],
+        "bytes": 1924407
+      }
+    },
+    {
+      "id": "pelvis",
+      "name": "Pelvis and caudal vertebrae",
+      "group": "axial",
+      "series": "Pelvis and caudal vertebrae",
+      "media": "000366135",
+      "buffer": "/models/pelvis.bin",
+      "bufferBytes": 6743468,
+      "positions": 0,
+      "normals": 1935708,
+      "indices": 2903564,
+      "vertexCount": 161309,
+      "indexCount": 959976,
+      "sourceTriangles": 765404,
+      "triangles": 319992,
+      "simplifyError": 0.00015,
+      "level": 300,
+      "voxel": [
+        0.314106,
+        0.314106,
+        0.314106
+      ],
+      "sourceVoxel": [
+        0.157053,
+        0.157053,
+        0.157053
+      ],
+      "bounds": [
+        [
+          -68.632,
+          -34.176,
+          -39.459
+        ],
+        [
+          68.632,
+          34.176,
+          39.459
+        ]
+      ],
+      "size": [
+        137.26,
+        68.35,
+        78.92
+      ],
+      "orient": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "landmarks": [],
+      "volume": {
+        "sheet": "/volumes/pelvis-slices.jpg",
+        "dims": [
+          256,
+          256,
+          438
+        ],
+        "tiles": [
+          21,
+          21
+        ],
+        "window": [
+          -1000,
+          2000
+        ],
+        "voxel": [
+          0.314106,
+          0.314106,
+          0.314106
+        ],
+        "bytes": 3107066
+      }
+    },
+    {
+      "id": "shoulder",
+      "name": "Left glenohumeral joint",
+      "group": "forelimb",
+      "series": "Glenohumeral joint",
+      "media": "000365290",
+      "buffer": "/models/shoulder.bin",
+      "bufferBytes": 6747384,
+      "positions": 0,
+      "normals": 1938552,
+      "indices": 2907828,
+      "vertexCount": 161546,
+      "indexCount": 959889,
+      "sourceTriangles": 965537,
+      "triangles": 319963,
+      "simplifyError": 0.00018,
+      "level": 300,
+      "voxel": [
+        0.335046,
+        0.335046,
+        0.335046
+      ],
+      "sourceVoxel": [
+        0.167523,
+        0.167523,
+        0.167523
+      ],
+      "bounds": [
+        [
+          -96.828,
+          -34.832,
+          -39.405
+        ],
+        [
+          96.828,
+          34.832,
+          39.405
+        ]
+      ],
+      "size": [
+        193.66,
+        69.66,
+        78.81
+      ],
+      "orient": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "landmarks": [],
+      "volume": {
+        "sheet": "/volumes/shoulder-slices.jpg",
+        "dims": [
+          240,
+          240,
+          579
+        ],
+        "tiles": [
+          25,
+          24
+        ],
+        "window": [
+          -1000,
+          2000
+        ],
+        "voxel": [
+          0.335046,
+          0.335046,
+          0.335046
+        ],
+        "bytes": 3540727
+      }
+    },
+    {
+      "id": "forearm",
+      "name": "Forearm and manus",
+      "group": "forelimb",
+      "series": "Forearm and manus",
+      "media": "000363641",
+      "buffer": "/models/forearm.bin",
+      "bufferBytes": 6743348,
+      "positions": 0,
+      "normals": 1935636,
+      "indices": 2903456,
+      "vertexCount": 161303,
+      "indexCount": 959973,
+      "sourceTriangles": 696265,
+      "triangles": 319991,
+      "simplifyError": 0.00011,
+      "level": 300,
+      "voxel": [
+        0.335046,
+        0.335046,
+        0.335046
+      ],
+      "sourceVoxel": [
+        0.167523,
+        0.167523,
+        0.167523
+      ],
+      "bounds": [
+        [
+          -96.996,
+          -32.3,
+          -31.362
+        ],
+        [
+          96.996,
+          32.3,
+          31.362
+        ]
+      ],
+      "size": [
+        193.99,
+        64.6,
+        62.72
+      ],
+      "orient": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "landmarks": [],
+      "volume": {
+        "sheet": "/volumes/forearm-slices.jpg",
+        "dims": [
+          240,
+          240,
+          580
+        ],
+        "tiles": [
+          25,
+          24
+        ],
+        "window": [
+          -1000,
+          2000
+        ],
+        "voxel": [
+          0.335046,
+          0.335046,
+          0.335046
+        ],
+        "bytes": 3704597
+      }
+    },
+    {
+      "id": "femur",
+      "name": "Right femur and knee",
+      "group": "hindlimb",
+      "series": "Femur",
+      "media": "000365309",
+      "buffer": "/models/femur.bin",
+      "bufferBytes": 3704492,
+      "positions": 0,
+      "normals": 1062444,
+      "indices": 1593668,
+      "vertexCount": 88537,
+      "indexCount": 527706,
+      "sourceTriangles": 175902,
+      "triangles": 175902,
+      "simplifyError": 0,
+      "level": 300,
+      "voxel": [
+        0.572804,
+        0.572804,
+        0.572804
+      ],
+      "sourceVoxel": [
+        0.286402,
+        0.286402,
+        0.286402
+      ],
+      "bounds": [
+        [
+          -68.736,
+          -50.408,
+          -56.971
+        ],
+        [
+          68.736,
+          50.408,
+          56.971
+        ]
+      ],
+      "size": [
+        137.47,
+        100.82,
+        113.94
+      ],
+      "orient": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "landmarks": [],
+      "volume": {
+        "sheet": "/volumes/femur-slices.jpg",
+        "dims": [
+          256,
+          256,
+          241
+        ],
+        "tiles": [
+          16,
+          16
+        ],
+        "window": [
+          -1000,
+          2000
+        ],
+        "voxel": [
+          0.572804,
+          0.572804,
+          0.572804
+        ],
+        "bytes": 1236580
+      }
+    },
+    {
+      "id": "crus",
+      "name": "Tibia and fibula",
+      "group": "hindlimb",
+      "series": "Tibia and fibula",
+      "media": "000368009",
+      "buffer": "/models/crus.bin",
+      "bufferBytes": 6754868,
+      "positions": 0,
+      "normals": 1943292,
+      "indices": 2914940,
+      "vertexCount": 161941,
+      "indexCount": 959982,
+      "sourceTriangles": 717900,
+      "triangles": 319994,
+      "simplifyError": 0.00014,
+      "level": 300,
+      "voxel": [
+        0.358978,
+        0.358978,
+        0.358978
+      ],
+      "sourceVoxel": [
+        0.179489,
+        0.179489,
+        0.179489
+      ],
+      "bounds": [
+        [
+          -123.612,
+          -38.278,
+          -36.104
+        ],
+        [
+          123.612,
+          38.278,
+          36.104
+        ]
+      ],
+      "size": [
+        247.22,
+        76.56,
+        72.21
+      ],
+      "orient": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "landmarks": [],
+      "volume": {
+        "sheet": "/volumes/crus-slices.jpg",
+        "dims": [
+          224,
+          224,
+          704
+        ],
+        "tiles": [
+          27,
+          27
+        ],
+        "window": [
+          -1000,
+          2000
+        ],
+        "voxel": [
+          0.358978,
+          0.358978,
+          0.358978
+        ],
+        "bytes": 3282733
+      }
+    },
+    {
+      "id": "pes",
+      "name": "Left pes",
+      "group": "hindlimb",
+      "series": "Left pes",
+      "media": "000364373",
+      "buffer": "/models/pes.bin",
+      "bufferBytes": 6751152,
+      "positions": 0,
+      "normals": 1940784,
+      "indices": 2911176,
+      "vertexCount": 161732,
+      "indexCount": 959994,
+      "sourceTriangles": 692396,
+      "triangles": 319998,
+      "simplifyError": 0.00014,
+      "level": 300,
+      "voxel": [
+        0.358978,
+        0.358978,
+        0.358978
+      ],
+      "sourceVoxel": [
+        0.179489,
+        0.179489,
+        0.179489
+      ],
+      "bounds": [
+        [
+          -120.437,
+          -36.997,
+          -35.474
+        ],
+        [
+          120.437,
+          36.997,
+          35.474
+        ]
+      ],
+      "size": [
+        240.87,
+        73.99,
+        70.95
+      ],
+      "orient": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "landmarks": [],
+      "volume": {
+        "sheet": "/volumes/pes-slices.jpg",
+        "dims": [
+          224,
+          224,
+          701
+        ],
+        "tiles": [
+          27,
+          26
+        ],
+        "window": [
+          -1000,
+          2000
+        ],
+        "voxel": [
+          0.358978,
+          0.358978,
+          0.358978
+        ],
+        "bytes": 3172848
+      }
+    },
+    {
+      "id": "rostral",
+      "name": "Rostral half of body",
+      "group": "overview",
+      "series": "Rostral half of body",
+      "media": "000360675",
+      "buffer": "/models/rostral.bin",
+      "bufferBytes": 6731868,
+      "positions": 0,
+      "normals": 1927944,
+      "indices": 2891916,
+      "vertexCount": 160662,
+      "indexCount": 959988,
+      "sourceTriangles": 418694,
+      "triangles": 319996,
+      "simplifyError": 0.00005,
+      "level": 300,
+      "voxel": [
+        0.888864,
+        0.888864,
+        0.888864
+      ],
+      "sourceVoxel": [
+        0.444432,
+        0.444432,
+        0.444432
+      ],
+      "bounds": [
+        [
+          -233.277,
+          -55.43,
+          -102.723
+        ],
+        [
+          233.277,
+          55.43,
+          102.723
+        ]
+      ],
+      "size": [
+        466.55,
+        110.86,
+        205.45
+      ],
+      "orient": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "landmarks": [],
+      "volume": {
+        "sheet": "/volumes/rostral-slices.jpg",
+        "dims": [
+          256,
+          256,
+          539
+        ],
+        "tiles": [
+          24,
+          23
+        ],
+        "window": [
+          -1000,
+          2000
+        ],
+        "voxel": [
+          0.888864,
+          0.888864,
+          0.888864
+        ],
+        "bytes": 2400173
+      }
+    },
+    {
+      "id": "caudal",
+      "name": "Caudal half of body",
+      "group": "overview",
+      "series": "Caudal half of body",
+      "media": "000360846",
+      "buffer": "/models/caudal.bin",
+      "bufferBytes": 5607612,
+      "positions": 0,
+      "normals": 1604856,
+      "indices": 2407284,
+      "vertexCount": 133738,
+      "indexCount": 800082,
+      "sourceTriangles": 266694,
+      "triangles": 266694,
+      "simplifyError": 0,
+      "level": 300,
+      "voxel": [
+        0.888864,
+        0.888864,
+        0.888864
+      ],
+      "sourceVoxel": [
+        0.444432,
+        0.444432,
+        0.444432
+      ],
+      "bounds": [
+        [
+          -231.743,
+          -50.106,
+          -108.773
+        ],
+        [
+          231.743,
+          50.106,
+          108.773
+        ]
+      ],
+      "size": [
+        463.49,
+        100.21,
+        217.55
+      ],
+      "orient": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "landmarks": [],
+      "volume": {
+        "sheet": "/volumes/caudal-slices.jpg",
+        "dims": [
+          256,
+          256,
+          539
+        ],
+        "tiles": [
+          24,
+          23
+        ],
+        "window": [
+          -1000,
+          2000
+        ],
+        "voxel": [
+          0.888864,
+          0.888864,
+          0.888864
+        ],
+        "bytes": 2155534
+      }
+    }
+  ]
+}

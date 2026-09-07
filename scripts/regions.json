@@ -1,0 +1,120 @@
+{
+  "specimen": {
+    "taxon": "Felis catus",
+    "specimenId": "3DAS:00001",
+    "organization": "3D Anatomy Studios",
+    "facility": "Keck XROMM Core Facility, Brown University",
+    "device": "Animage Fidex CT",
+    "modality": "Micro/nano X-ray computed tomography"
+  },
+  "regions": [
+    {
+      "id": "head",
+      "series": "Head",
+      "media": "000362550",
+      "name": "Skull, mandible and atlas",
+      "group": "skull",
+      "downsample": 2,
+      "bone": 300
+    },
+    {
+      "id": "cervical",
+      "series": "Cervical vertebrae",
+      "media": "000362554",
+      "name": "Cervical vertebrae",
+      "group": "axial",
+      "downsample": 2,
+      "bone": 300
+    },
+    {
+      "id": "thoracic",
+      "series": "Thoracic vertebrae",
+      "media": "000367176",
+      "name": "Thoracic vertebrae and ribs",
+      "group": "axial",
+      "downsample": 2,
+      "bone": 250
+    },
+    {
+      "id": "lumbar",
+      "series": "Lumbar vertebrae",
+      "media": "000368005",
+      "name": "Lumbar vertebrae",
+      "group": "axial",
+      "downsample": 2,
+      "bone": 300
+    },
+    {
+      "id": "pelvis",
+      "series": "Pelvis and caudal vertebrae",
+      "media": "000366135",
+      "name": "Pelvis and caudal vertebrae",
+      "group": "axial",
+      "downsample": 2,
+      "bone": 300
+    },
+    {
+      "id": "shoulder",
+      "series": "Glenohumeral joint",
+      "media": "000365290",
+      "name": "Left glenohumeral joint",
+      "group": "forelimb",
+      "downsample": 2,
+      "bone": 300
+    },
+    {
+      "id": "forearm",
+      "series": "Forearm and manus",
+      "media": "000363641",
+      "name": "Forearm and manus",
+      "group": "forelimb",
+      "downsample": 2,
+      "bone": 300
+    },
+    {
+      "id": "femur",
+      "series": "Femur",
+      "media": "000365309",
+      "name": "Right femur and knee",
+      "group": "hindlimb",
+      "downsample": 2,
+      "bone": 300
+    },
+    {
+      "id": "crus",
+      "series": "Tibia and fibula",
+      "media": "000368009",
+      "name": "Tibia and fibula",
+      "group": "hindlimb",
+      "downsample": 2,
+      "bone": 300
+    },
+    {
+      "id": "pes",
+      "series": "Left pes",
+      "media": "000364373",
+      "name": "Left pes",
+      "group": "hindlimb",
+      "downsample": 2,
+      "bone": 300
+    },
+    {
+      "id": "rostral",
+      "series": "Rostral half of body",
+      "media": "000360675",
+      "name": "Rostral half of body",
+      "group": "overview",
+      "downsample": 2,
+      "bone": 300
+    },
+    {
+      "id": "caudal",
+      "series": "Caudal half of body",
+      "media": "000360846",
+      "name": "Caudal half of body",
+      "group": "overview",
+      "downsample": 2,
+      "bone": 300
+    }
+  ]
+}

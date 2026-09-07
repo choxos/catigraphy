@@ -1,0 +1,80 @@
+# Catigraphy nginx vhost. Serves the static Vite build in /var/www/catigraphy/dist.
+#
+# deploy/deploy.sh copies this file to the server's home directory on every run,
+# so ~/catigraphy.xera.ac.nginx is always a fresh copy of this file.
+#
+# First install (needs root):
+#   sudo cp ~/catigraphy.xera.ac.nginx /etc/nginx/sites-available/catigraphy.xera.ac
+#   sudo ln -sfn /etc/nginx/sites-available/catigraphy.xera.ac /etc/nginx/sites-enabled/catigraphy.xera.ac
+#   sudo nginx -t && sudo systemctl reload nginx
+#   sudo certbot --nginx -d catigraphy.xera.ac --agree-tos -m ahmad.pub@gmail.com --redirect
+#
+# AFTER certbot has run, do NOT copy this file over the installed one again:
+# certbot rewrites that file in place to add the TLS block, and this copy is
+# still HTTP only, so overwriting it would take the certificate configuration
+# with it. Changing anything below means editing the installed file by hand, or
+# removing the certificate and running certbot again.
+#
+# This file is HTTP-only on purpose, exactly like the sibling omfatlas vhost.
+
+# IPv4 only, exactly like every sibling vhost on this box. This is deliberate.
+# catigraphy.xera.ac is an A record, and no other vhost here binds [::]:80. If
+# this file were the only one to bind it, nginx would make this server block the
+# DEFAULT for IPv6 port 80, and an IPv6 request for any OTHER xera.ac site would
+# land on this site. Matching the siblings avoids that entirely.
+server {
+    listen 80;
+    server_name catigraphy.xera.ac;
+
+    root /var/www/catigraphy/dist;
+    index index.html;
+
+    # The atlas loads nothing from anywhere but this origin: no analytics, no
+    # CDN, no web font service. The box-wide policy in
+    # /etc/nginx/conf.d/security.conf is already stricter than this site needs,
+    # so no add_header appears at this level and the site inherits all of it.
+    # That inheritance is also why the locations below say nosniff again:
+    # nginx does not merge add_header across levels, so a block that declares
+    # one drops every header it would otherwise inherit.
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/html;
+    }
+
+    # One page, no router, so there is no deep link to fall back for. Serving
+    # the shell at every unknown path would make each typo and each probe a
+    # 200 OK copy of the homepage, which is what a search engine reads as a
+    # soft 404, and it would swallow /robots.txt and /favicon.svg. Unknown
+    # paths are 404.
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # Vite content-hashes these filenames, so they can be cached forever.
+    location /assets/ {
+        add_header X-Content-Type-Options nosniff always;
+        add_header Cache-Control "public, immutable, max-age=31536000";
+    }
+
+    # The surfaces are NOT content-hashed: a new build reuses the same names.
+    # One day of caching, never immutable, or a geometry change would strand
+    # returning visitors on stale meshes.
+    #
+    # deploy.sh writes a .gz next to every .bin and .json and gzip_static
+    # serves it directly. These halve: head.bin goes from 6.8 MB to 3.5 MB,
+    # and doing it once at deploy time costs nothing per request.
+    location /models/ {
+        gzip_static on;
+        add_header X-Content-Type-Options nosniff always;
+        add_header Cache-Control "public, max-age=86400";
+        types { application/octet-stream bin; application/json json; }
+        default_type application/octet-stream;
+    }
+
+    # The slice volumes are JPEG sheets. They are already compressed, gaining
+    # four percent from gzip, so they are served as they are.
+    location /volumes/ {
+        add_header X-Content-Type-Options nosniff always;
+        add_header Cache-Control "public, max-age=86400";
+    }
+}
