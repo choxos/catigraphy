@@ -249,6 +249,9 @@ for (const record of built.regions) {
     group: record.group,
     series: record.series,
     media: record.media,
+    // A scene built from more than one series has to credit all of them. Only
+    // the fused skeleton does, so the field is absent everywhere else.
+    ...(record.mediaAlso ? { mediaAlso: record.mediaAlso } : {}),
     buffer: `/models/${record.id}.bin`,
     bufferBytes: offset,
     ...offsets,
@@ -295,10 +298,10 @@ writeFileSync(
       collection: "Scans of Carolina Biological Supply Specimens",
       specimen: built.specimen,
       scope:
-        "Twelve independently acquired CT series of one disarticulated domestic cat. " +
-        "The series share no coordinate system, so each is its own region and no " +
-        "assembled skeleton is shown. Bones within a region are not separated from " +
-        "one another.",
+        "Twelve CT series of one domestic cat, published as eleven scenes. The two " +
+        "whole body series overlap and are registered into one whole skeleton; the ten " +
+        "regional series share no coordinate system with anything, so each stays its " +
+        "own region. Bones within a region are not separated from one another.",
       budget: BUDGET,
       regions,
     },

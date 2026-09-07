@@ -15,8 +15,10 @@ import assert from "node:assert/strict";
 const ROOT = join(import.meta.dirname, "..");
 const atlas = JSON.parse(readFileSync(join(ROOT, "public", "models", "atlas.json"), "utf8"));
 
-test("the manifest describes twelve regions of one specimen", () => {
-  assert.equal(atlas.regions.length, 12);
+test("the manifest describes eleven regions of one specimen", () => {
+  // Twelve series, but the two whole body scans are registered and fused into
+  // one skeleton before packing, so they arrive here as a single region.
+  assert.equal(atlas.regions.length, 11);
   assert.equal(atlas.specimen.taxon, "Felis catus");
   const ids = atlas.regions.map((region) => region.id);
   assert.equal(new Set(ids).size, ids.length, "region ids repeat");

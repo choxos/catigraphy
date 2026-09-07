@@ -4,3 +4,4 @@ build/
 .gstack/
 documentation/data/
 .DS_Store
+__pycache__/

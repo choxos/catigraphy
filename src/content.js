@@ -9,7 +9,7 @@ export const GROUPS = {
   axial: { label: "Axial skeleton", color: 0xdcd6c4, order: 2 },
   forelimb: { label: "Forelimb", color: 0xdfd4bd, order: 3 },
   hindlimb: { label: "Hindlimb", color: 0xd9d1bd, order: 4 },
-  overview: { label: "Whole halves", color: 0xd5cfc0, order: 5 },
+  overview: { label: "Whole animal", color: 0xd5cfc0, order: 5 },
 };
 
 // Presets in Hounsfield units. The stored volume is windowed to [-1000, 2000]
@@ -112,21 +112,15 @@ export const REGION_NOTES = {
       "The cat stands on its digits. The metatarsals are held off the ground and the tarsus rides high, which is why the hock looks like a backward bending knee.",
     ],
   },
-  rostral: {
+  skeleton: {
     summary:
-      "The front half of the body at 0.444 mm voxels: skull, neck, thorax with the ribs, and the shoulder girdle.",
+      "The whole animal, 749 mm from muzzle to tail tip: two scans of the same intact cat, registered and fused into one volume.",
     look: [
-      "This scan and its caudal counterpart are the only ones that show more than one region at a time. They are coarser than the regional scans by a factor of about three.",
-      "The rib cage is narrow side to side and deep top to bottom. A cat's thorax is built to pass through a gap the width of its head.",
-      "The scapula lies flat against the rib cage and is held there by muscle. Watch how far forward and back it reaches across the ribs.",
-    ],
-  },
-  caudal: {
-    summary:
-      "The back half of the body at 0.444 mm voxels: lumbar column, pelvis, hind limb and the tail.",
-    look: [
-      "The lumbar column is long and mobile. It is the part of the skeleton that lets the back arch and extend through a bound, and it carries most of the reach in a running stride.",
-      "The caudal vertebrae shorten and simplify along the tail. The arches and processes disappear first, leaving cylinders of bone toward the tip.",
+      "This is the only scene that shows the skeleton entire. The cat is longer than the scanner's 479 mm field, so it was scanned twice, head first and then turned end for end, and the two fields overlap by about 150 mm along the lumbar spine. Five metal fiducials on the specimen holder appear in both, which is what fixes the join: the bone surfaces then agree to a median of 0.28 mm, well inside one voxel.",
+      "Follow the vertebral column from the atlas to the tail tip and watch the vertebrae change job: short and wide in the neck, spined and rib bearing in the thorax, long and heavy in the loin, fused at the sacrum, then simplifying to cylinders down the tail.",
+      "The rib cage is narrow side to side and deep top to bottom. A cat's thorax is built to pass through a gap the width of its head, and seen against the whole animal that shape is obvious.",
+      "Neither limb girdle is a joint to the spine in the way the hind limb is. The pelvis fuses to the sacrum; the scapula only lies against the ribs, held by muscle, which is where the front end gets its reach.",
+      "At 0.889 mm voxels this is the coarsest surface in the atlas, about twice the voxel size of the regional scans. It is here for the whole animal and its proportions; go to a region for the detail.",
     ],
   },
 };
@@ -182,7 +176,7 @@ export const REFERENCE = [
 
 /** What this atlas is not, stated where a reader will meet it. */
 export const LIMITS = [
-  "The specimen was scanned in pieces. The twelve series were acquired separately, each with its own frame of reference, and nothing in the data relates one to another. There is no assembled skeleton here, and there cannot be one without registration this atlas does not attempt.",
+  "Only the whole animal is assembled. The twelve series were acquired separately, each with its own frame of reference, and nothing in the data relates one to another. The two whole body scans are the exception: they are of the same intact cat, they overlap by about 150 mm along the lumbar spine, and five metal fiducials on the specimen holder appear in both, so they could be registered and fused, and the whole skeleton is that fusion. The ten regional scans share no field with anything, so they cannot be placed into it and this atlas does not guess at where they would go.",
   "Bones are not separated from one another. In a specimen with its joints intact the articular surfaces touch, so a threshold that follows bone returns one connected surface per region: the head comes back as skull, mandible and atlas together. Naming individual bones would mean segmenting them, which this atlas does not do. The anatomy is named by landmarks placed on the surface instead.",
   "A scan's field can hold more than the part it is named for. The series are named for what they were acquired to show, and several of them reach well past it: the tibia and fibula and the left pes were acquired with the same geometry over much the same piece of the hind limb, and each field is about 245 mm long. Where the atlas cannot say which end of a field is which, it says so rather than guessing.",
   "The surfaces are thresholds, not segmentations. Everything denser than the level shown for each region is inside the surface, including tooth enamel, mineralized cartilage and any part of the mount that reads as dense as bone.",

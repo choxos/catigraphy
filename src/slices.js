@@ -53,6 +53,7 @@ export function createSlices(canvas) {
     }
     state.volume = volume;
     state.dims = [width, height, depth];
+    state.orient = region.orient;
     state.voxel = region.volume.voxel;
     state.id = region.id;
     return state;
@@ -76,6 +77,14 @@ export function createSlices(canvas) {
     return { count: width, width: depth, height };
   }
 
+  /** Which way the viewer turned a scan axis: +1 if it kept the scan's own
+   *  direction, -1 if it reversed it. The rows are signed permutations, so a
+   *  scan axis appears in exactly one of them. */
+  function sense(axis) {
+    const row = state.orient?.find((values) => values[axis] !== 0);
+    return row ? row[axis] : 1;
+  }
+
   function draw(axis, index, { center, width: level }) {
     if (!state.volume) return null;
     const [width, height] = state.dims;
@@ -90,16 +99,24 @@ export function createSlices(canvas) {
     const low = ((center - level / 2 - HU_LOW) / span) * 255;
     const high = ((center + level / 2 - HU_LOW) / span) * 255;
     const scale = 255 / (high - low || 1);
-    // Row index runs down the acquired image and the surfaces are built with it
-    // running up, so the two planes that show it are flipped to agree.
-    const flip = axis !== 1;
+    // Which scan axis runs down the canvas and which runs across it, for this
+    // plane. Row index runs down the acquired image while the surfaces are
+    // built with it running up, which is the base flip. On top of that, a
+    // region whose orientation turned an axis around has to turn here too, or
+    // the slices contradict the surface beside them: the whole skeleton was
+    // scanned belly up and is rolled upright in the viewer, so without this its
+    // reslices would show the animal inverted and mirrored.
+    const [down, across] = axis === 1 ? [2, 0] : [1, axis === 0 ? 2 : 0];
+    const flip = (axis !== 1) !== sense(down) < 0;
+    const mirror = sense(across) < 0;
     for (let y = 0; y < view.height; y++)
       for (let x = 0; x < view.width; x++) {
         const row = flip ? view.height - 1 - y : y;
+        const column = mirror ? view.width - 1 - x : x;
         let at;
-        if (axis === 0) at = slice * width * height + row * width + x;
-        else if (axis === 1) at = x * width * height + slice * width + row;
-        else at = x * width * height + row * width + slice;
+        if (axis === 0) at = slice * width * height + row * width + column;
+        else if (axis === 1) at = column * width * height + slice * width + row;
+        else at = column * width * height + row * width + slice;
         const value = Math.max(0, Math.min(255, (state.volume[at] - low) * scale));
         const out = (y * view.width + x) * 4;
         pixels[out] = pixels[out + 1] = pixels[out + 2] = value;

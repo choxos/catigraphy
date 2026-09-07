@@ -157,7 +157,7 @@ function renderInspector() {
     <p class="summary">${escape(notes.summary ?? "")}</p>
     <h2>The scan</h2>
     <dl class="facts">
-      <dt>MorphoSource media</dt><dd>${escape(region.media)}</dd>
+      <dt>MorphoSource media</dt><dd>${escape([region.media, ...(region.mediaAlso ?? [])].join(", "))}</dd>
       <dt>Series</dt><dd>${escape(region.series)}</dd>
       <dt>Acquired at</dt><dd>${region.sourceVoxel[0].toFixed(3)} mm isotropic</dd>
       <dt>Rebuilt at</dt><dd>${region.voxel[0].toFixed(3)} mm isotropic</dd>
@@ -176,10 +176,10 @@ function renderInspector() {
               </button>`,
             )
             .join("")}</div>`
-        : `<p class="note">This region has no landmarks. Only the head does: the specimen was
-           scanned in pieces and the pose of the other eleven cannot be recovered from the
-           headers, so naming a point on them would be a guess rather than a reading. What to
-           look for is below.</p>`
+        : `<p class="note">This region has no landmarks. Only the head does, because only there
+           could the pose be read back out of the scan itself. The headers describe how a part lay
+           in the scanner, not how it sat on the animal, so naming a point here would be a guess
+           rather than a reading. What to look for is below.</p>`
     }
     ${
       notes.look
@@ -377,9 +377,11 @@ function renderReading() {
       of ${escape(specimen.organization)}, scanned on an ${escape(specimen.device)} at the
       ${escape(specimen.facility)} and published on MorphoSource in the collection
       ${escape(state.atlas.collection)}.</p>
-      <p>Twelve series were acquired: two halves of the whole body at 0.444 mm voxels, and ten
-      closer scans of single regions at 0.157 to 0.286 mm. This atlas rebuilds a bone surface from
-      each of them and ships the volumes themselves for slice viewing.</p>
+      <p>Twelve series were acquired: two overlapping scans of the whole animal at 0.444 mm voxels,
+      and ten closer scans of single regions at 0.157 to 0.286 mm. This atlas rebuilds a bone
+      surface from each of them and ships the volumes themselves for slice viewing. The two whole
+      animal scans are registered on their overlap and fused, so they arrive as one skeleton rather
+      than two halves, which makes eleven scenes from twelve series.</p>
     </section>
     <section class="card">
       <h2>What this atlas is not</h2>

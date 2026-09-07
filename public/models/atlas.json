@@ -9,7 +9,7 @@
     "device": "Animage Fidex CT",
     "modality": "Micro/nano X-ray computed tomography"
   },
-  "scope": "Twelve independently acquired CT series of one disarticulated domestic cat. The series share no coordinate system, so each is its own region and no assembled skeleton is shown. Bones within a region are not separated from one another.",
+  "scope": "Twelve CT series of one domestic cat, published as eleven scenes. The two whole body series overlap and are registered into one whole skeleton; the ten regional series share no coordinate system with anything, so each stays its own region. Bones within a region are not separated from one another.",
   "budget": 320000,
   "regions": [
     {
@@ -1029,21 +1029,24 @@
       }
     },
     {
-      "id": "rostral",
-      "name": "Rostral half of body",
+      "id": "skeleton",
+      "name": "Whole skeleton",
       "group": "overview",
-      "series": "Rostral half of body",
+      "series": "Rostral and caudal halves of body, registered",
       "media": "000360675",
-      "buffer": "/models/rostral.bin",
-      "bufferBytes": 6731868,
+      "mediaAlso": [
+        "000360846"
+      ],
+      "buffer": "/models/skeleton.bin",
+      "bufferBytes": 6741260,
       "positions": 0,
-      "normals": 1927944,
-      "indices": 2891916,
-      "vertexCount": 160662,
-      "indexCount": 959988,
-      "sourceTriangles": 418694,
-      "triangles": 319996,
-      "simplifyError": 0.00005,
+      "normals": 1934292,
+      "indices": 2901440,
+      "vertexCount": 161191,
+      "indexCount": 959955,
+      "sourceTriangles": 674057,
+      "triangles": 319985,
+      "simplifyError": 0.00008,
       "level": 300,
       "voxel": [
         0.888864,
@@ -1057,20 +1060,20 @@
       ],
       "bounds": [
         [
-          -233.277,
-          -55.43,
-          -102.723
+          -374.416,
+          -56.077,
+          -128.357
         ],
         [
-          233.277,
-          55.43,
-          102.723
+          374.416,
+          56.077,
+          128.357
         ]
       ],
       "size": [
-        466.55,
-        110.86,
-        205.45
+        748.83,
+        112.15,
+        256.71
       ],
       "orient": [
         [
@@ -1080,122 +1083,37 @@
         ],
         [
           0,
-          1,
+          -1,
           0
         ],
         [
           0,
           0,
-          1
+          -1
         ]
       ],
       "landmarks": [],
       "volume": {
-        "sheet": "/volumes/rostral-slices.jpg",
+        "sheet": "/volumes/skeleton-slices.jpg",
         "dims": [
-          256,
-          256,
-          539
+          154,
+          139,
+          453
         ],
         "tiles": [
-          24,
-          23
+          22,
+          21
         ],
         "window": [
           -1000,
           2000
         ],
         "voxel": [
-          0.888864,
-          0.888864,
-          0.888864
+          1.777728,
+          1.777728,
+          1.777728
         ],
-        "bytes": 2400173
-      }
-    },
-    {
-      "id": "caudal",
-      "name": "Caudal half of body",
-      "group": "overview",
-      "series": "Caudal half of body",
-      "media": "000360846",
-      "buffer": "/models/caudal.bin",
-      "bufferBytes": 5607612,
-      "positions": 0,
-      "normals": 1604856,
-      "indices": 2407284,
-      "vertexCount": 133738,
-      "indexCount": 800082,
-      "sourceTriangles": 266694,
-      "triangles": 266694,
-      "simplifyError": 0,
-      "level": 300,
-      "voxel": [
-        0.888864,
-        0.888864,
-        0.888864
-      ],
-      "sourceVoxel": [
-        0.444432,
-        0.444432,
-        0.444432
-      ],
-      "bounds": [
-        [
-          -231.743,
-          -50.106,
-          -108.773
-        ],
-        [
-          231.743,
-          50.106,
-          108.773
-        ]
-      ],
-      "size": [
-        463.49,
-        100.21,
-        217.55
-      ],
-      "orient": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "landmarks": [],
-      "volume": {
-        "sheet": "/volumes/caudal-slices.jpg",
-        "dims": [
-          256,
-          256,
-          539
-        ],
-        "tiles": [
-          24,
-          23
-        ],
-        "window": [
-          -1000,
-          2000
-        ],
-        "voxel": [
-          0.888864,
-          0.888864,
-          0.888864
-        ],
-        "bytes": 2155534
+        "bytes": 733516
       }
     }
   ]

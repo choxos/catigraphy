@@ -4,6 +4,11 @@ Every surface and every slice in this atlas comes from CT data published on Morp
 3D Anatomy Studios. Nothing here is redrawn, and nothing here is modeled: the geometry is a
 threshold through the published volumes and the slice viewer serves the volumes themselves.
 
+Ten of the eleven scenes come from one series each. The eleventh, the whole skeleton, is a
+derivative of two: media 000360675 and media 000360846, the rostral and caudal halves of the
+body, rigidly registered on the field they share and fused into one volume. No new geometry is
+introduced by that step; one of the two published volumes is resampled onto the other's grid.
+
 ## Terms
 
 The MorphoSource records carry the rights statement

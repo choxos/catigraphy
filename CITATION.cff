@@ -15,9 +15,11 @@ abstract: >-
   cubes on the thresholded volume and is served together with the volume
   itself, which the browser reslices in three planes with selectable
   windows. The skull carries fifteen named landmarks placed against the
-  midsagittal slice; every region carries a written note. The specimen was
-  scanned disarticulated in twelve independent frames of reference, so the
-  atlas is regional and shows no assembled skeleton, and the bones within a
+  midsagittal slice; every region carries a written note. The two whole body
+  series overlap along the lumbar spine and share five metal fiducials, so
+  they are registered and fused into one whole skeleton, agreeing to a median
+  of 0.28 mm on bone. The ten regional series share no frame of reference
+  with anything, so the rest of the atlas is regional, and the bones within a
   region are not segmented from one another. It is an educational reference
   and is not intended for diagnosis.
 keywords:

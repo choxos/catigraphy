@@ -11,11 +11,16 @@ slice volumes they were built from.
 
 ## What it contains
 
-- **Twelve scanned regions**, each a bone surface at 320,000 triangles: the skull with its
+- **The whole skeleton**, 749 mm from muzzle to tail tip. The cat is longer than the scanner's
+  479 mm field, so it was scanned twice, head first and then turned end for end. The two fields
+  overlap by about 150 mm along the lumbar spine and share five metal fiducials on the specimen
+  holder, so they register: the bone surfaces agree to a median of 0.28 mm, inside one 0.444 mm
+  voxel. The two volumes are fused and surfaced in one pass, so the join carries no seam.
+- **Ten scanned regions**, each a bone surface at up to 320,000 triangles: the skull with its
   mandible and the atlas, the cervical, thoracic and lumbar vertebrae, the pelvis with the
   sacrum and the first caudal vertebrae, the shoulder, the forearm and manus, the femur and
-  knee, the tibia and fibula, the pes, and the two halves of the whole body. 3.64 million
-  triangles in all, decimated from 7.94 million off marching cubes.
+  knee, the tibia and fibula, and the pes. With the skeleton that is 3.38 million triangles in
+  all, decimated from 7.93 million off marching cubes.
 - **The slices themselves.** Every region ships its volume as a sheet of transverse tiles that
   the browser reslices in three planes, with bone, soft tissue and full windows. The soft tissue
   in this specimen exists only here: no threshold separates the animal from the wrapping it was
@@ -34,11 +39,13 @@ slice volumes they were built from.
 Four things about the source data shape the whole atlas, and they are stated in the interface
 as well as here.
 
-**The specimen was scanned disarticulated.** The twelve series were acquired separately, each
-with its own frame of reference, each starting at its own origin. Nothing in the data relates
-one to another, so there is no assembled skeleton here and there cannot be one without
-registration this atlas does not attempt. The two half-body scans are the closest thing to an
-overview, and they are two scans, not one animal.
+**Only the whole animal is assembled.** The twelve series were acquired separately, each with
+its own frame of reference, each starting at its own origin, and for ten of them nothing in the
+data relates one to another. The two whole-body scans are the exception, because they are two
+views of the same intact cat with a field in common: the registration described above puts them
+in one frame to well under a voxel, and the whole skeleton is that fusion. The ten regional scans
+share no field with anything, so they cannot be placed into it, and this atlas does not guess at
+where they would go.
 
 **Bones are not separated from one another.** In a specimen with its joints intact the articular
 surfaces touch, so a threshold that follows bone returns one connected mass per region rather
@@ -56,8 +63,12 @@ atlas cannot say which end of a field is which, it says so in the region's notes
 **Only the head is landmarked.** An ex vivo specimen has no anatomical frame, and the DICOM
 orientation tags describe how a part lay in the scanner rather than how it sat on the animal.
 For the head that pose could be recovered from the scan itself, by reading the midsagittal slice
-and the enamel of the teeth. For the other eleven it could not, so they carry written notes and
-no named points.
+and the enamel of the teeth, and it carries fifteen named points. Which way is up was recovered
+for the whole skeleton too, off the thoracic cross sections, where the vertebral column sits at
+the apex of the body outline with the ribs sweeping away from it, and confirmed on the midsagittal
+of the skull, where the thin-walled braincase and the dense muzzle and mandible fall on opposite
+sides. The animal was scanned belly down and is rolled upright, and it carries no named points.
+For the nine remaining regions neither was possible, so they carry written notes alone.
 
 ## Run
 
@@ -84,6 +95,7 @@ pydicom and Pillow.
 
 ```sh
 python3 scripts/extract-ct.py     # DICOM to surfaces and display volumes, into build/
+python3 scripts/fuse-halves.py    # register the two whole-body scans, fuse, replace them
 node scripts/pack-atlas.mjs       # decimate, orient, pack into public/
 ```
 
@@ -95,6 +107,18 @@ as absolute. Marching cubes then runs on the smoothed values restricted to what 
 gives a sub-voxel surface rather than a blocked one. The same volume is written again as a JPEG
 sheet of transverse tiles, because a browser has a JPEG decoder and no DICOM parser.
 
+`scripts/fuse-halves.py` joins the two whole-body scans. It finds the five metal fiducials in each
+volume as intensity-weighted centroids, fits them in closed form both in order and reversed, and
+takes the better, which is the reversed one: the specimen went into the bore the other way round,
+and the fit says so rather than being told. That transform is then refined by trimmed ICP on the
+bone surfaces inside the overlap, which uses no fiducial at all. The two independent answers
+differ by 0.57 degrees and 1.6 mm, and the bone agrees to a median of 0.28 mm afterward. Every one
+of those residuals is recomputed on each run and written into the region record, so a rebuild that
+stops agreeing says so instead of shipping a bad join quietly. The caudal volume is then resampled
+into the rostral scan's grid and the two are combined by taking the denser reading, which needs no
+mask: outside a scan's field the sample reads as air, so the other scan wins there by itself. One
+marching cubes pass then runs over the fused volume, which is why the join has no seam in it.
+
 `scripts/pack-atlas.mjs` collapses each surface to the triangle budget with meshoptimizer,
 reverses the winding so the outward normal is the front face, computes area-weighted vertex
 normals, centers the region on its own bounding box in millimeters, and writes one buffer per
@@ -105,7 +129,8 @@ the bone rather than fighting it for pixels. The distance a point moved when it 
 recorded, and `npm test` fails if any of them was placed more than 10 mm off the surface. That
 check is what caught a landmark floating in the middle of the orbital cavity.
 
-Both scripts are deterministic: the same archives give the same surfaces.
+All three scripts are deterministic: the same archives give the same surfaces, and the same
+registration residuals.
 
 `scripts/preview.py` renders a mesh from six directions with a millimeter grid and any landmarks
 placed so far drawn on it. It is how the landmarks were positioned and checked, and it is the
@@ -115,9 +140,9 @@ fastest way to see what a change to the extraction did.
 
 | | |
 | --- | --- |
-| Surfaces | 12 buffers, 3.7 to 6.8 MB, 77 MB total |
-| Slice volumes | 12 sheets, 1.2 to 3.7 MB, 32 MB total |
-| Application | 518 kB, 134 kB gzipped |
+| Surfaces | 11 buffers, 3.7 to 6.8 MB, 71 MB total |
+| Slice volumes | 11 sheets, 0.7 to 3.7 MB, 28 MB total |
+| Application | 520 kB, 135 kB gzipped |
 
 Nothing loads until a region is selected, and a region's slices are decoded only when the slice
 view is opened, so the first paint fetches one 6.8 MB buffer.

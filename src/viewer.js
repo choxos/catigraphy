@@ -6,7 +6,9 @@
 // are a section plane you can drive through it and named markers on it.
 //
 // Positions are millimeters. Each region is centered on its own bounding box
-// because the twelve scans share no coordinate system.
+// because the regional scans share no coordinate system. The whole skeleton is
+// the one scene assembled from more than one scan, and that assembly happens in
+// the extractor, before anything here sees it.
 
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
